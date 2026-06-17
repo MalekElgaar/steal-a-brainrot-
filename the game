@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Creature Collector</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: #f0f0f0;
+}
+#game {
+    margin-top: 20px;
+}
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 5px;
+}
+.card {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border: 2px solid black;
+    background: white;
+    margin: 5px;
+    line-height: 100px;
+    font-weight: bold;
+}
+</style>
+</head>
+<body>
+
+<h1>Creature Collector</h1>
+
+<p>Cash: $<span id="cash">100</span></p>
+
+<button onclick="buyCreature()">Buy Creature ($50)</button>
+
+<h2>Your Creatures</h2>
+<div id="creatures"></div>
+
+<script>
+let cash = 100;
+let creatures = [];
+
+function updateUI() {
+    document.getElementById("cash").textContent = cash;
+
+    const container = document.getElementById("creatures");
+    container.innerHTML = "";
+
+    creatures.forEach(creature => {
+        const div = document.createElement("div");
+        div.className = "card";
+        div.textContent = creature.name;
+        container.appendChild(div);
+    });
+}
+
+function buyCreature() {
+    if (cash >= 50) {
+        cash -= 50;
+
+        creatures.push({
+            name: "Creature",
+            income: 2
+        });
+
+        updateUI();
+    } else {
+        alert("Not enough cash!");
+    }
+}
+
+setInterval(() => {
+    let income = creatures.reduce((sum, c) => sum + c.income, 0);
+    cash += income;
+    updateUI();
+}, 1000);
+
+updateUI();
+</script>
+
+</body>
+</html>

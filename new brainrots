@@ -1,0 +1,17 @@
+const brainrots = [
+  {
+    name: "Ancient Meme Lord 1",
+    rarity: "OG",
+    income: 1000
+  },
+  {
+    name: "Void Banana Entity 1",
+    rarity: "Secret",
+    income: 500
+  },
+  {
+    name: "Cosmic Skibidi Overlord 1",
+    rarity: "Brainrot God",
+    income: 100
+  }
+];

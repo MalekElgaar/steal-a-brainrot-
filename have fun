@@ -1,0 +1,9 @@
+function getRandomBrainrot() {
+  return brainrots[Math.floor(Math.random() * brainrots.length)];
+}
+
+function buyBrainrot() {
+  const brainrot = getRandomBrainrot();
+  creatures.push(brainrot);
+  updateUI();
+}

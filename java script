@@ -1,0 +1,3 @@
+const brainrots = [
+  { name: "Ancient Meme Lord 1", rarity: "OG", income: 1000 },
+  { name: "Anc

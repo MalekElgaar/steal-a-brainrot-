@@ -1,0 +1,5 @@
+const rarityChances = {
+  "Brainrot God": 10,
+  "Secret": 2,
+  "OG": 0.1
+};
